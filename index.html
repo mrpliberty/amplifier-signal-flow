@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10151b">
+  <meta name="description" content="Explore six amplifier signal paths, from a quiet input to a speaker-driving output.">
+  <title>Signal / Power — amplifier atlas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="masthead">
+      <a class="brand" href="#top" aria-label="Signal / Power, back to top"><span class="brand-icon" aria-hidden="true">〰</span><span>SIGNAL<span class="brand-slash">/</span>POWER</span></a>
+      <span class="masthead-meta">AN INTERACTIVE AMPLIFIER ATLAS <span class="edition">· VOL. 01</span></span>
+      <a class="about-link" href="#principle">THE PRINCIPLE <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span> FROM MILLIVOLTS TO MUSIC</div>
+        <h1 id="page-title">Follow the <em>signal.</em><br>Find the <em>power.</em></h1>
+        <p>A guided look inside six ways an amplifier turns a small audio signal into the current that moves a speaker. Pick a topology, then follow the illuminated path.</p>
+        <div class="intro-footer"><span><span class="live-dot"></span> INTERACTIVE FIELD GUIDE</span><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span></div>
+      </section>
+
+      <section class="explorer" aria-label="Amplifier explorer">
+        <aside class="sidebar" aria-label="Choose an amplifier topology">
+          <div class="sidebar-header"><span>01 / SELECT A CIRCUIT</span><span>06 TYPES</span></div>
+          <nav id="topology-list" class="topology-list" aria-label="Amplifier types"></nav>
+          <div class="sidebar-note"><span class="note-star">✳</span><p>These are conceptual signal maps, not construction schematics. The input controls energy supplied by the power rails.</p></div>
+        </aside>
+
+        <div class="workspace">
+          <div class="workspace-heading">
+            <div><span class="section-kicker" id="category">01 — CONTINUOUS CONDUCTION</span><h2 id="topology-title">Low-power SET / Class A</h2></div>
+            <div class="heading-index" id="heading-index">01 <span>/ 06</span></div>
+          </div>
+          <p class="workspace-lede" id="topology-summary"></p>
+          <div class="control-row">
+            <div class="phase-controls" role="group" aria-label="Signal phase">
+              <span class="control-label">SIGNAL MOMENT</span>
+              <button type="button" class="phase-button" data-phase="idle">Idle</button>
+              <button type="button" class="phase-button" data-phase="positive">Positive</button>
+              <button type="button" class="phase-button" data-phase="zero">Zero crossing</button>
+              <button type="button" class="phase-button" data-phase="negative">Negative</button>
+            </div>
+            <button type="button" id="play-button" class="play-button" aria-label="Play signal moments"><span aria-hidden="true">▶</span> AUTO TRACE</button>
+          </div>
+          <div id="subview" class="subview" hidden></div>
+          <div class="diagram-frame">
+            <div class="diagram-topline"><span><span class="live-dot"></span> LIVE SIGNAL MAP</span><span id="diagram-label">REPRESENTATIVE CIRCUIT · NOT TO SCALE</span></div>
+            <div class="diagram-scroll"><svg id="diagram" viewBox="0 0 1000 500" role="img" aria-labelledby="diagram-title diagram-desc"><title id="diagram-title">Amplifier signal flow diagram</title><desc id="diagram-desc">Select a topology to explore its signal and power paths.</desc></svg></div>
+            <div class="diagram-legend" aria-label="Diagram key"><span><i class="legend-line audio"></i> AUDIO SIGNAL</span><span><i class="legend-line supply"></i> DC / POWER</span><span><i class="legend-line feedback"></i> FEEDBACK</span><span><i class="legend-line control"></i> CONTROL</span></div>
+          </div>
+          <div class="insight-grid">
+            <div class="insight-card selected-card"><span class="card-kicker">INSPECTED STAGE <span aria-hidden="true">↗</span></span><h3 id="stage-title">Select a stage</h3><p id="stage-description">Hover or select any block in the diagram to see what it does.</p></div>
+            <div class="insight-card"><span class="card-kicker">AT THIS MOMENT</span><h3 id="moment-title"></h3><p id="moment-description"></p></div>
+          </div>
+          <div class="scope-panel"><div class="scope-heading"><div><span class="card-kicker">OUTPUT STUDY</span><h3 id="scope-title">What reaches the speaker</h3></div><span id="scope-caption"></span></div><svg id="scope" viewBox="0 0 780 180" role="img" aria-labelledby="scope-title scope-caption"></svg></div>
+          <div class="takeaway"><span>THE TAKEAWAY</span><p id="takeaway"></p></div>
+        </div>
+      </section>
+      <section class="principle" id="principle" aria-labelledby="principle-title"><div class="principle-index">02 / THE PRINCIPLE</div><div><h2 id="principle-title">The music steers.<br><em>The supply drives.</em></h2><p>A line-level input is a small instruction, not a reservoir of speaker power. Voltage-gain stages enlarge its voltage swing; output devices draw energy from a DC supply to deliver load current. Different classes describe how those output devices conduct, switch, or use their supply headroom.</p><p>Shown here as simplified, representative circuits. Actual designs vary in biasing, feedback, power supply, filtering and protection. Vacuum-tube high voltage can be lethal: these are educational diagrams, not build guides.</p></div></section>
+    </main>
+    <footer><span>SIGNAL / POWER</span><span>AN EXPLORATION OF AUDIO ELECTRONICS</span><a href="#top">BACK TO TOP ↑</a></footer>
+  </div>
+</body>
+</html>
